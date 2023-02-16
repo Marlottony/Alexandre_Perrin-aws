@@ -17,5 +17,5 @@ ENV FLASK_ENV=production
 EXPOSE 8080
 
 # Run the command to start the Flask app
-CMD ["python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
 
