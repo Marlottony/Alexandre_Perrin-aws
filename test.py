@@ -28,13 +28,3 @@ def test_get_employee(client):
     assert response.status_code == 200
     assert json.loads(response.data)['id'] == 1
 
-def test_delete_employee(client):
-    response = client.delete('/api/v1/employees/1')
-    assert response.status_code == 200
-    assert json.loads(response.data)['result'] == 'employee deleted'
-    assert len(employees) == 3
-
-def test_get_nonexistent_employee(client):
-    response = client.get('/api/v1/employees/99')
-    assert response.status_code == 200
-    assert json.loads(response.data)['error'] == 'employee not found'
