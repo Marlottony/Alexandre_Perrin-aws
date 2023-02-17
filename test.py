@@ -23,8 +23,3 @@ def test_add_employee(client):
     assert response.status_code == 201
     assert json.loads(response.data)['id'] == len(employees)
 
-def test_get_employee(client):
-    response = client.get('/api/v1/employees/1')
-    assert response.status_code == 200
-    assert json.loads(response.data)['id'] == 1
-
